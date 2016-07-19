@@ -9,5 +9,12 @@
 #ifndef CGEnumerate_h
 #define CGEnumerate_h
 
+#import <Foundation/Foundation.h>
 
+typedef NS_ENUM (NSInteger,CGAddMenuType){
+    CGAddMenuTypeGroupChat = 0,
+    CGAddMenuTypeAddFriend,
+    CGAddMenuTypeScan,
+    CGAddMenuTypeWallet,
+};
 #endif /* CGEnumerate_h */

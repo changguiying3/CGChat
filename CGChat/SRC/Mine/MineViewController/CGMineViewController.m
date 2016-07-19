@@ -9,5 +9,8 @@
 #import "CGMineViewController.h"
 
 @implementation CGMineViewController
-
+-(void)viewDidLoad{
+    [super viewDidLoad];
+    [self.navigationItem setTitle:@"我"];
+}
 @end

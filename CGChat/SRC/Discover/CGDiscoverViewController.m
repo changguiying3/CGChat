@@ -9,5 +9,8 @@
 #import "CGDiscoverViewController.h"
 
 @implementation CGDiscoverViewController
-
+-(void)viewDidLoad{
+    [super viewDidLoad];
+    [self.navigationItem setTitle:@"发现"];
+}
 @end

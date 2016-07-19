@@ -9,5 +9,19 @@
 #import <UIKit/UIKit.h>
 
 @interface CGAddMenuView : UIView
+/**
+ *  显示AddMenu
+ *
+ *  @param view 父View
+ */
+-(void)showInView:(UIView *)view;
+/**
+ *  是否正在显示
+ */
+-(BOOL)isShow;
+/**
+ *   隐藏
+ */
+-(void)dismiss;
 
 @end

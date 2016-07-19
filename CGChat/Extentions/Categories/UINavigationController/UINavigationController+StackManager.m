@@ -9,5 +9,15 @@
 #import "UINavigationController+StackManager.h"
 
 @implementation UINavigationController (StackManager)
-
+/**
+ *  RootViewController
+ *
+ *  @return RootViewController
+ */
+-(UIViewController *)rootViewController{
+    if (self.viewControllers && [self.viewControllers count] > 0) {
+        return [self.viewControllers firstObject];
+    }
+    return nil;
+}
 @end

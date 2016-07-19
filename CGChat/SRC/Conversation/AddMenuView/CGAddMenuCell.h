@@ -7,7 +7,9 @@
 //
 
 #import "CGTableViewCell.h"
-
+#import "CGAddMenuItem.h"
 @interface CGAddMenuCell : CGTableViewCell
+
+@property (nonatomic,strong) CGAddMenuItem *item;
 
 @end

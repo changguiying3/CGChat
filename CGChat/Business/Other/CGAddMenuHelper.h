@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CGAddMenuItem.h"
 
 @interface CGAddMenuHelper : NSObject
+
+@property (nonatomic,strong) NSMutableArray *menuData;
 
 @end

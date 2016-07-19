@@ -9,5 +9,9 @@
 #import "CGTabBarController.h"
 
 @interface CGRootViewController : CGTabBarController
-
++ (CGRootViewController *) sharedRootViewController;
+/**
+ *  获取tabbarController的第Index个vc(不是navController)
+ */
+-(id)childViewControllerAtIndex:(NSUInteger)index;
 @end

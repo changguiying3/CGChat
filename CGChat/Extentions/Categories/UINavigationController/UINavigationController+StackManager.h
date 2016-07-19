@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface UINavigationController (StackManager)
-
+/**
+ *  RootViewController
+ *
+ *  @return RootViewController
+ */
+-(UIViewController *)rootViewController;
 @end
