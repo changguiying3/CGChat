@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CGMenuCell.h"
 
 @interface CGMenuViewController : UITableViewController
+
+@property (nonatomic,strong) NSMutableArray *data;
+
+@property (nonatomic,strong) NSString *analyzeTitle;
 
 @end

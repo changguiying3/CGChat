@@ -24,7 +24,7 @@
         [selectedView setBackgroundColor:[UIColor colorBlackForAddMenu]];
         [self setSelectedBackgroundView:selectedView];
         
-        [self.contentView addSubview:self.iconImageView];
+        [self.contentView addSubview:self.iconImageView];///
         [self.contentView addSubview:self.titleLabel];
         
         [self m_addMasonry];

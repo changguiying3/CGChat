@@ -6,8 +6,11 @@
 //  Copyright © 2016年 Gui Ying Chang. All rights reserved.
 //
 
-#import "CGTabBarController.h"
+#import "CGTableViewController.h"
+#import "CGFriendsSearchViewController.h"
 
-@interface CGFriendsViewController : CGTabBarController
+@interface CGFriendsViewController : CGTableViewController
+
+@property (nonatomic,strong) CGFriendsSearchViewController *searchVC;
 
 @end

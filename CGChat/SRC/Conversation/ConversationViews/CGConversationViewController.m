@@ -8,12 +8,15 @@
 
 #import "CGConversationViewController.h"
 #import "CGAddMenuView.h"
+#import "CGSearchController.h"
 
 @interface CGConversationViewController ()
 
 @property (nonatomic,strong) UIImageView *scrollTopView;
 
 @property (nonatomic,strong) CGAddMenuView *addMenuView;
+
+@property (nonatomic,strong) CGSearchController *searchController;
 
 @end
 @implementation CGConversationViewController
@@ -41,6 +44,13 @@
 #pragma mark - Private Mehods-
 -(void) m_initUI{
     
+    [self.tableView setBackgroundColor:[UIColor whiteColor]];
+    [self.tableView setTableHeaderView:self.searchController.searchBar];
+    [self.tableView addSubview:self.scrollTopView];
+    [self.scrollTopView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(self.tableView);
+        make.bottom.mas_equalTo(self.tableView.mas_top).mas_offset(-35);
+    }];
     UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"nav_add"] style:UIBarButtonItemStyleDone target:self action:@selector(rightBarButtonDown:)];
     [self.navigationItem setRightBarButtonItem:rightBarButtonItem];
 }
@@ -52,5 +62,31 @@
         //设置代理
     }
     return _addMenuView;
+}
+
+-(CGFriendsSearchViewController *)searchVC{
+    if (_searchVC == nil) {
+        _searchVC = [[CGFriendsSearchViewController alloc]init];
+    }
+    return _searchVC;
+}
+
+-(CGSearchController *)searchController{
+    if (_searchController == nil) {
+        _searchController = [[CGSearchController alloc]initWithSearchResultsController:_searchVC];
+       
+//        [_searchController setSearchResultsUpdater:self.searchVC];
+        [_searchController.searchBar setPlaceholder:@"搜索"];
+//        [_searchController.searchBar setDelegate:self];
+        [_searchController setShowVoiceButton:YES];
+    }
+    return _searchController;
+}
+
+-(UIImageView *)scrollTopView{
+    if (_scrollTopView == nil) {
+        _scrollTopView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"conv_wechat_icon"]];
+    }
+    return _scrollTopView;
 }
 @end
