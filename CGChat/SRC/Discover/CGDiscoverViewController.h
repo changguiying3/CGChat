@@ -8,6 +8,7 @@
 
 #import "CGMenuViewController.h"
 
+
 @interface CGDiscoverViewController : CGMenuViewController
 
 @end

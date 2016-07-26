@@ -8,6 +8,9 @@
 
 #import "CGMineViewController.h"
 #import "CGMineHelper.h"
+#import "CGMineHeaderCell.h"
+
+#import "CGMineInfoViewController.h"
 
 @interface CGMineViewController  ()
 
@@ -22,12 +25,19 @@
     self.mineHelper = [[CGMineHelper alloc]init];
     self.data = self.mineHelper.mineMenuData;
     
+    [self.tableView registerClass:[CGMineHeaderCell class] forCellReuseIdentifier:@"CGMineHeaderCell"];
+    
     
 }
 
 #pragma mark - Delegate -
 //MARK: UITableViewDataSource
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0) {
+        CGMineHeaderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CGMineHeaderCell"];
+        [cell setUser:[CGUserHelper sharedHelper].user];
+        return cell;
+    }
     return [super tableView:tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section]];
 }
 
@@ -37,5 +47,17 @@
         return 90;
     }
     return [super tableView:tableView heightForRowAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section]];
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0) {
+        CGMineInfoViewController *mineInfoVC = [[CGMineInfoViewController alloc]init];
+        [self setHidesBottomBarWhenPushed:YES];
+        [self.navigationController pushViewController:mineInfoVC animated:YES];
+        //不加这句返回时，tabbar消失
+        [self setHidesBottomBarWhenPushed:NO];
+        [super tableView:tableView didSelectRowAtIndexPath:indexPath];
+        return;
+    }
 }
 @end

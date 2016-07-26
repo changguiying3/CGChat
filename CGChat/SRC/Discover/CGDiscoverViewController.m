@@ -7,10 +7,20 @@
 //
 
 #import "CGDiscoverViewController.h"
+#import "CGDiscoverHelper.h"
+
+@interface CGDiscoverViewController ()
+
+@property (nonatomic, strong) CGDiscoverHelper *discoverHelper;
+
+@end
 
 @implementation CGDiscoverViewController
 -(void)viewDidLoad{
     [super viewDidLoad];
     [self.navigationItem setTitle:@"发现"];
+    
+    self.discoverHelper = [[CGDiscoverHelper alloc]init];
+    self.data = self.discoverHelper.discoverMenuData;
 }
 @end
