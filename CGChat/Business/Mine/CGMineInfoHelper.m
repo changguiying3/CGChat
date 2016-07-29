@@ -40,9 +40,12 @@
     CGSettingItem *location = CGCreateSettingItem(@"我的地址");
     CGSettingGroup *group1 = CGCreateSettingGroup(nil, nil, (@[avatar,nikename,username,qrCode,location]));
     
-    CGSettingItem *sex = CGCreateSettingItem(@"性别");///
+    CGSettingItem *sex = CGCreateSettingItem(@"性别");
+    sex.subTitle = userInfo.detailInfo.sex;
     CGSettingItem *city = CGCreateSettingItem(@"地区");
+    city.subTitle = userInfo.detailInfo.location;
     CGSettingItem *motto = CGCreateSettingItem(@"个性签名");
+    motto.subTitle = userInfo.detailInfo.motto.length > 0 ? userInfo.detailInfo.motto : @"未填写";
     CGSettingGroup *group2 = CGCreateSettingGroup(nil, nil, (@[sex,city,motto]));
     
     [_mineInfoData removeAllObjects];

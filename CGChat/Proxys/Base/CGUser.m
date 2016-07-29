@@ -11,6 +11,15 @@
 
 @implementation CGUser
 
+-(instancetype)init{
+    if (self = [super init]) {
+        [CGUser mj_setupObjectClassInArray:^NSDictionary *{
+            return @{@"detailInfo" : @"CGUserDetail"};
+        }];
+    }
+    return self;
+}
+
 -(void)setUsername:(NSString *)username{
     if ([username isEqualToString:_username]) {
         return;
@@ -47,5 +56,12 @@
 #pragma mark - Getter
 -(NSString *)showName{
     return self.remarkName.length > 0 ? self.remarkName :(self.nikeName.length > 0 ? self.nikeName : self.username);
+}
+
+-(CGUserDetail *)detailInfo{
+    if (_detailInfo == nil) {
+        _detailInfo = [[CGUserDetail alloc]init];
+    }
+    return _detailInfo;
 }
 @end

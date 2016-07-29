@@ -7,29 +7,33 @@
 //
 
 #import "CGBaseDataModel.h"
+#import "CGUserDetail.h"
 
 @interface CGUser : CGBaseDataModel
 
 /// 用户ID
-@property (nonatomic, strong) NSString *userID;
+@property (nonatomic, copy) NSString *userID;
 
 /// 用户名
-@property (nonatomic, strong) NSString *username;
+@property (nonatomic, copy) NSString *username;
 
 /// 昵称
-@property (nonatomic, strong) NSString *nikeName;
+@property (nonatomic, copy) NSString *nikeName;
 
 /// 头像URL
-@property (nonatomic, strong) NSString *avatarURL;
+@property (nonatomic, copy) NSString *avatarURL;
 
 /// 头像Path
-@property (nonatomic, strong) NSString *avatarPath;
+@property (nonatomic, copy) NSString *avatarPath;
 
 /// 备注名
-@property (nonatomic, strong) NSString *remarkName;
+@property (nonatomic, copy) NSString *remarkName;
 
 /// 界面显示名称
-@property (nonatomic, strong, readonly) NSString *showName;
+@property (nonatomic, copy, readonly) NSString *showName;
+
+#pragma mark - 其他
+@property (nonatomic,strong) CGUserDetail *detailInfo;
 
 #pragma mark - 列表用
 /**
@@ -37,8 +41,8 @@
  *
  *  来源：备注 > 昵称 > 用户名
  */
-@property (nonatomic,strong) NSString *pinyin;
+@property (nonatomic,copy) NSString *pinyin;
 
-@property (nonatomic,strong) NSString *pinyinInitial;
+@property (nonatomic,copy) NSString *pinyinInitial;
 
 @end

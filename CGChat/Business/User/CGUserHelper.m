@@ -31,6 +31,12 @@ static CGUserHelper *helper;
         self.user.avatarURL = @"http://p1.qq181.com/cms/120506/2012050623111097826.jpg";
         self.user.nikeName = @"常桂盈";
         self.user.username = @"chang-guiying";
+        self.user.detailInfo.qqNumber = @"2454516291";
+        self.user.detailInfo.email = @"changguiying@123.com";
+        self.user.detailInfo.location = @"山东 菏泽";
+        self.user.detailInfo.sex = @"女";
+        self.user.detailInfo.motto = @"Come On";
+        self.user.detailInfo.momentsWallURL = @"http://www.jszhongzhu.com/img/aHR0cDovL2ltZy5wY29ubGluZS5jb20uY24vaW1hZ2VzL3VwbG9hZC91cGMvdHgvd2FsbHBhcGVyLzEzMDEvMDgvYzEvMTcyMjg4OThfMTM1NzYyNzQ2MDEwNl84MDB4NjAwLmpwZw==.jpg";
     }
     return self;
 }

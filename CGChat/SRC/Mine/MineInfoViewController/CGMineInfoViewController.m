@@ -9,6 +9,7 @@
 #import "CGMineInfoViewController.h"
 #import "CGMineInfoHelper.h"
 #import "CGMineInfoAvatarCell.h"
+#import "CGMyQRCodeViewController.h"
 
 @interface CGMineInfoViewController  ()
 
@@ -47,5 +48,15 @@
         return 85.0f;
     }
     return [super tableView:tableView heightForRowAtIndexPath:indexPath];
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    CGSettingItem *item = [self.data[indexPath.section] objectAtIndex:indexPath.row];
+    if ([item.title isEqualToString:@"我的二维码"]) {
+        CGMyQRCodeViewController *myQRCodeVC = [[CGMyQRCodeViewController alloc]init];
+        [self setHidesBottomBarWhenPushed:YES];
+        [self.navigationController pushViewController:myQRCodeVC animated:YES];
+    }
+    [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 @end

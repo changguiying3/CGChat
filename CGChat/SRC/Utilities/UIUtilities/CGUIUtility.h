@@ -12,4 +12,5 @@
 
 +(CGFloat)getTextHeightOfText:(NSString *)text font:(UIFont *)font width:(CGFloat)width;
 
++(void)captureScreenshotFromView:(UIView *)view rect:(CGRect)rect finished:(void (^)(NSString *avatarPath))finished;
 @end
